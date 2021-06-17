@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechSparq Code Challenge</title>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+  </head>
+  <body id="target">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script id="template" type="text/x-handlebars-template">
+      <header>
+        <h1>All Users</h1>
+      </header>
+      <ul>
+        {{#each data}}
+          <li>
+            <img
+              src={{avatar}}
+              alt="avatar"
+              onerror="this.src='./images/imgnotfound.jpeg';this.width='200'"
+              width="200"
+            />
+            <p>
+              {{name}}
+            </p>
+            <div class="toggle off">
+              <p>
+                <strong>Created:</strong>
+                {{createdAt}}
+              </p>
+              <p>
+                <strong>ID:</strong>
+                {{id}}
+              </p>
+            </div>
+            <button class="button" id="button">
+              more info
+
+            </button>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
